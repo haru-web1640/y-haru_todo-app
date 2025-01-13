@@ -1,0 +1,36 @@
+@import './variables';
+
+$avatar-size: 40px;
+$header-padding-y: 16px;
+$back-icon-size: 16px;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: $header-padding-y 30px;
+  color: black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  &_logos {
+    min-width: 0;
+    display: flex;
+
+    img {
+      cursor: pointer;
+      width: $back-icon-size;
+      height: $back-icon-size;
+      margin: ($avatar-size - $back-icon-size) / 2 8px 0;
+    }
+  }
+
+  &_pageTitle {
+    color: white;
+    font-size: 18px;
+  }
+
+  &_avatar {
+    width: $avatar-size;
+    height: $avatar-size;
+    border-radius: 100%;
+  }
+}
