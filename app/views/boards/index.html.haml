@@ -1,0 +1,16 @@
+%h2 All Boards
+.card
+  .card_content
+    .card_title Brackets
+    .card_detail
+      %p= "Saving money – is something we would all like."
+  .card_edit.dropdown
+    = image_tag 'Edit.png'
+    .card_edit_wrapper.dropdown_content
+      %p=link_to "Edit" , edit_path
+      %p= "Delete"
+  .card_user
+    = image_tag 'Users.png'
+.new_board
+  %p= "+ Add new borad"
+
