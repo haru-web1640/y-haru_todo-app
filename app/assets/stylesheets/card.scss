@@ -10,13 +10,13 @@ $avatar-size: 32px;
   border-radius: 10px;
   position: relative;
 
-  &_title {
+  &_name {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 8px;
   }
 
-  &_detail {
+  &_description {
     color: rgba(0,0,0,0.4);
     font-size: 14px;
   }
