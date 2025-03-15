@@ -8,18 +8,21 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %link{:href => "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
   %body
     %header.header
       .header_logos
         %p.header_pageTitle
           = link_to 'Boards', root_path
       - if user_signed_in?
-        .dropdown
-          = image_tag current_user.avatar_image, class: 'header_avatar dropbtn'
-          .dropdown-content
+        .dropdown.header_menu
+          = image_tag current_user.avatar_image, class: 'header_avatar'
+          .dropdown_content.header_menu_wrapper
             = link_to 'プロフィール', profile_path
-            = link_to 'お気に入り', favorites_path
+            %p= 'お気に入り'
             = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
+      - else
+        = link_to 'ログイン', new_user_session_path, class: 'header_loginBtn'
     - if flash.present?
       .flash
         - flash.each do |key, value|
