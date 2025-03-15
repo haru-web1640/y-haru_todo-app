@@ -7,6 +7,7 @@ $back-icon-size: 16px;
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: $header-padding-y 30px;
   color: black;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -26,6 +27,19 @@ $back-icon-size: 16px;
   &_pageTitle {
     color: white;
     font-size: 18px;
+  }
+
+  &_menu {
+    position: relative;
+  }
+
+  &_menu_wrapper {
+    background-color: #ffffff;
+    border: 1px solid #F4F4F4;
+    border-radius: 10px;
+    padding: 10px 16px 13px 14px;
+    text-align: left;
+    width: 130px;
   }
 
   &_avatar {

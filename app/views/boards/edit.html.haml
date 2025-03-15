@@ -1,10 +1,13 @@
-%h2 New Board
-%div
-  .form_item
-    %label Name
-    %input.text{ type: 'text', value: 'Sample Name' }
-  .form_item
-    %label Description
-    %textarea Sample Description
+= form_with(model: @board, url: boards_path, method: 'post', local: true) do |f|
+  %h2 New Board
   %div
-    %button.btn-primary.actions Submit
+  %div
+    .form_item
+      = f.label :name
+      = f.text_field :name
+  %div
+    .form_item
+      = f.label :description
+      = f.text_area :description
+    %div
+      = f.submit 'Submit', class: 'btn-primary actions'

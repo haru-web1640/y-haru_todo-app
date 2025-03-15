@@ -1,0 +1,15 @@
+= form_with(model: @board, url: boards_path, method: 'post', local: true) do |f|
+  %h2 New Board
+  %div
+    .form_item
+      %div
+        = f.label :name, 'Name'
+      %div
+        = f.text_field :name, class: 'text'
+    .form_item
+      %div
+        = f.label :description, 'Description'
+      %div
+        = f.text_area :description, class: 'description'
+    %div
+      = f.submit 'Submit', class: 'btn-primary actions'

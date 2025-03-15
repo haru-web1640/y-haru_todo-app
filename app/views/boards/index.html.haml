@@ -2,19 +2,21 @@
 
 - @boards.each do |board|
   .card
-    .card_content
-      .card_name
-        = board.name
-      .card_description
-        = board.description
-    .card_edit.dropdown
-      = image_tag 'Edit.png'
-      .card_edit_wrapper.dropdown_content
-        %p=link_to "Edit" , edit_path
-        %p= "Delete"
+    = link_to board_path(board) do
+      .card_content
+        .card_name
+          = board.name
+        .card_description
+          = board.description
+    - if user_signed_in?
+      .card_edit.dropdown
+        = image_tag 'Edit.png'
+        .card_edit_wrapper.dropdown_content
+          %p= link_to "Edit", edit_board_path(board)
+          %p= link_to "Delete", board_path(board), method: :delete, data: { confirm: "Are you sure?" }
     .card_user
-      = image_tag 'Users.png'
+      = image_tag board.user.avatar_image
 
-.new_board
-  %p= "+ Add new borad"
-
+= link_to new_board_path do
+  .new_board
+    %p + Add new board

@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: profiles
+#
+#  id         :bigint           not null, primary key
+#  birthday   :date
+#  gender     :string
+#  nickname   :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :bigint           not null
+#
+# Indexes
+#
+#  index_profiles_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
+#
+
+one:
+  user: one
+  nickname: MyString
+  birthday: 2025-03-15
+  gender: MyString
+
+two:
+  user: two
+  nickname: MyString
+  birthday: 2025-03-15
+  gender: MyString
